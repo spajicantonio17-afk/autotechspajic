@@ -13,7 +13,7 @@ const frames: {
   {
     src: "/photos/radionica.jpg",
     label: "Radionica",
-    caption: "Moderno opremljena radionica u Grudama",
+    caption: "Naša moderna radionica",
   },
   {
     src: "/photos/dijagnostika.jpg",
@@ -32,8 +32,8 @@ const frames: {
     caption: "Elektronika i programiranje — do zadnjeg detalja",
   },
   {
-    src: "/photos/detalj-hauba.jpg",
-    src2: "/photos/detalj-punjac.jpg",
+    src: "/photos/detalj-punjac.jpg",
+    src2: "/photos/detalj-hauba.jpg",
     src3: "/photos/detalj-beta.jpg",
     label: "Detalji",
     caption: "Detalji koji čine razliku",

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { waLink } from "@/lib/whatsapp";
+import OpenStatusBadge from "./OpenStatusBadge";
 
 const GARAGE_IMAGE = "/photos/garaza-vrata.jpg";
 
@@ -67,6 +68,12 @@ export default function Intro() {
             kodiranje i servis —{" "}
             <span className="text-fg">sve na jednom mjestu.</span>
           </p>
+          <div
+            className="reveal mt-4"
+            style={{ "--d": "175ms" } as React.CSSProperties}
+          >
+            <OpenStatusBadge />
+          </div>
 
           {/* Service chips */}
           <div
