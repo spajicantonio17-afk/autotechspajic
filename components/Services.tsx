@@ -329,7 +329,7 @@ export default function Services() {
         <Reveal>
           <div className="max-w-2xl">
             <p className="eyebrow tick text-fg-soft">Usluge</p>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-fg sm:text-5xl">
+            <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.02] tracking-tight text-fg sm:text-4xl lg:text-5xl">
               Elektronika, dijagnostika i sve ostalo za vaše vozilo
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-fg-soft">

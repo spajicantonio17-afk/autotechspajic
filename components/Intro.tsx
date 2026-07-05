@@ -42,25 +42,25 @@ export default function Intro() {
       />
 
       {/* Content */}
-      <div className="relative z-[2] mx-auto flex min-h-[100svh] max-w-container items-center gap-8 px-5 pb-16 pt-24 lg:justify-center lg:gap-0 lg:px-8">
-        {/* Left: Logo */}
-        <div className="flex flex-1 items-center justify-center lg:flex-none lg:justify-end">
+      <div className="relative z-[2] mx-auto flex min-h-[100svh] max-w-container flex-col items-center gap-6 px-5 pb-16 pt-28 lg:flex-row lg:items-center lg:gap-0 lg:justify-center lg:px-8">
+        {/* Logo */}
+        <div className="flex items-center justify-center lg:flex-none lg:justify-end">
           <Image
             src="/logo.png"
             alt="Autotech Spajic"
             width={420}
             height={280}
             priority
-            className="reveal h-72 w-auto object-contain sm:h-96 lg:h-[28rem]"
+            className="reveal h-48 w-auto object-contain sm:h-64 lg:h-[28rem]"
             style={{ "--d": "0ms" } as React.CSSProperties}
           />
         </div>
 
-        {/* Right: Text + CTAs */}
-        <div className="flex flex-1 flex-col justify-center lg:-ml-12 lg:max-w-xl">
+        {/* Text + CTAs */}
+        <div className="flex w-full flex-col items-center text-center lg:w-auto lg:flex-1 lg:items-start lg:text-left lg:-ml-12 lg:max-w-xl">
           {/* Subtitle */}
           <p
-            className="reveal text-xl leading-snug text-fg-soft sm:text-2xl"
+            className="reveal text-lg leading-snug text-fg-soft sm:text-xl lg:text-2xl"
             style={{ "--d": "120ms" } as React.CSSProperties}
           >
             Chiptuning, ključevi, dijagnostika,{" "}
@@ -70,7 +70,7 @@ export default function Intro() {
 
           {/* Service chips */}
           <div
-            className="reveal mt-6 flex flex-wrap gap-2"
+            className="reveal mt-6 flex flex-wrap justify-center gap-2 lg:justify-start"
             style={{ "--d": "230ms" } as React.CSSProperties}
           >
             {chips.map((chip) => (
@@ -85,7 +85,7 @@ export default function Intro() {
 
           {/* CTA buttons */}
           <div
-            className="reveal mt-9 flex flex-wrap gap-3"
+            className="reveal mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
             style={{ "--d": "340ms" } as React.CSSProperties}
           >
             <a
@@ -109,7 +109,7 @@ export default function Intro() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-6 z-[2] flex flex-col items-center gap-2 lg:right-10">
+      <div className="absolute bottom-8 right-6 z-[2] hidden flex-col items-center gap-2 sm:flex lg:right-10">
         <span className="text-[10px] uppercase tracking-[0.25em] text-fg-faint/50">
           Scroll
         </span>

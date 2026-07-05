@@ -37,7 +37,7 @@ export default function Process() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-6">
+        <div className="mt-10 grid gap-5 md:grid-cols-3 md:gap-6">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (

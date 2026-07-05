@@ -185,7 +185,7 @@ function Tile({ shot, onOpen }: { shot: Shot; onOpen: () => void }) {
     <button
       type="button"
       onClick={onOpen}
-      className="group flex w-72 flex-none flex-col overflow-hidden rounded-2xl border border-line text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-fg-soft sm:w-80"
+      className="group flex w-[min(72vw,288px)] flex-none flex-col overflow-hidden rounded-2xl border border-line text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-fg-soft sm:w-72"
     >
       <div className="photo-cine-wrap photo-slot relative aspect-[4/3] w-full">
         <Image

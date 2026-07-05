@@ -53,7 +53,7 @@ export default function About() {
                 <Counter
                   to={s.to}
                   suffix={s.suffix}
-                  className="font-display text-4xl font-extrabold tracking-tight text-fg sm:text-5xl"
+                  className="font-display text-3xl font-extrabold tracking-tight text-fg sm:text-4xl lg:text-5xl"
                 />
                 <p className="mt-2 text-xs font-medium uppercase tracking-[0.15em] text-fg-soft">
                   {s.label}

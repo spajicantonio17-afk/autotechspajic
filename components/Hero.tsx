@@ -25,7 +25,7 @@ export default function Hero() {
             Dijagnostika · Elektronika · Kodiranje
           </p>
 
-          <h1 className="mt-6 font-display text-[3.1rem] font-extrabold leading-[0.98] tracking-tight text-fg sm:text-7xl lg:text-[6rem]">
+          <h1 className="mt-6 font-display text-[2.4rem] font-extrabold leading-[0.98] tracking-tight text-fg sm:text-5xl lg:text-[5.5rem]">
             <span
               className="reveal block"
               style={{ "--d": "90ms" } as React.CSSProperties}
