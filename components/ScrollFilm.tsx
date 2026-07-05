@@ -72,8 +72,8 @@ export default function ScrollFilm() {
             <div className="photo-slot absolute inset-0">
               {frame.src2 && frame.src3 ? (
                 /* Gallery collage: every object fully visible (object-contain) */
-                <div className="absolute inset-x-4 bottom-28 top-20 sm:inset-x-10 sm:bottom-32 sm:top-24">
-                  <div className="grid h-full grid-rows-[55%_1fr] gap-3 sm:grid-cols-[1.2fr_1fr_1fr] sm:grid-rows-1">
+                <div className="absolute inset-x-2 bottom-20 top-14 sm:inset-x-10 sm:bottom-32 sm:top-24">
+                  <div className="grid h-full grid-rows-[55%_1fr] gap-2 sm:grid-cols-[1.2fr_1fr_1fr] sm:grid-rows-1 sm:gap-3">
                     <div className="relative">
                       <Image
                         src={frame.src}
@@ -82,7 +82,7 @@ export default function ScrollFilm() {
                         className="photo-cine object-contain"
                       />
                     </div>
-                    <div className="grid grid-cols-2 gap-3 sm:col-span-2">
+                    <div className="grid grid-cols-2 gap-2 sm:col-span-2 sm:gap-3">
                       <div className="relative">
                         <Image
                           src={frame.src2}
@@ -112,7 +112,7 @@ export default function ScrollFilm() {
                       className="photo-cine object-cover object-center"
                     />
                   </div>
-                  <div className="relative">
+                  <div className="relative hidden sm:block">
                     <Image
                       src={frame.src2}
                       alt={frame.label}
@@ -142,15 +142,15 @@ export default function ScrollFilm() {
             />
 
             {/* Bottom-left: label + caption */}
-            <div className="absolute bottom-10 left-6 z-[2] lg:left-10">
+            <div className="absolute bottom-6 left-4 z-[2] max-w-[75vw] sm:bottom-10 sm:left-6 lg:left-10">
               <p className="eyebrow tick text-fg-soft">{frame.label}</p>
-              <p className="mt-2 font-display text-2xl font-bold tracking-tight text-fg sm:text-3xl">
+              <p className="mt-1.5 font-display text-lg font-bold tracking-tight text-fg sm:mt-2 sm:text-2xl lg:text-3xl">
                 {frame.caption}
               </p>
             </div>
 
             {/* Bottom-right: frame counter */}
-            <div className="absolute bottom-10 right-6 z-[2] lg:right-10">
+            <div className="absolute bottom-6 right-4 z-[2] sm:bottom-10 sm:right-6 lg:right-10">
               <p className="font-display text-sm font-bold tabular-nums text-fg-faint">
                 {String(i + 1).padStart(2, "0")}{" "}
                 <span className="text-fg-faint/40">/ {String(frames.length).padStart(2, "0")}</span>
