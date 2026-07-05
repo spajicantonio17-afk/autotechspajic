@@ -109,7 +109,7 @@ export default function ScrollFilm() {
                       src={frame.src}
                       alt={frame.label}
                       fill
-                      className="photo-cine object-cover object-center"
+                      className="photo-cine object-contain sm:object-cover sm:object-center"
                     />
                   </div>
                   <div className="relative hidden sm:block">
@@ -127,7 +127,7 @@ export default function ScrollFilm() {
                   alt={frame.label}
                   fill
                   priority={i === 0}
-                  className="photo-cine object-cover object-center"
+                  className="photo-cine object-contain sm:object-cover sm:object-center"
                 />
               ) : null}
             </div>

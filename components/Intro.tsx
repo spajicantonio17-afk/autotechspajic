@@ -18,7 +18,7 @@ export default function Intro() {
             alt="Autotech Spajic radionica"
             fill
             priority
-            className="photo-cine object-cover object-[center_40%]"
+            className="photo-cine object-contain sm:object-cover sm:object-[center_40%]"
           />
         ) : null}
       </div>
