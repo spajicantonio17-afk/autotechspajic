@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0a0a0b; /* rich near-black */
+  --bg-2: #111114; /* elevated surface */
+  --bg-3: #17171b;
+  --fg: #f5f3ef; /* warm off-white */
+  --fg-soft: #a6a199; /* muted text */
+  --fg-faint: #6e6a63;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --accent: #e8232f; /* confident brand red */
+  --accent-bright: #ff3b46;
+
+  /* WhatsApp */
+  --wa: #1faa59;
+  --wa-bright: #25d366;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Confident, tight display headings */
+.font-display {
+  letter-spacing: -0.025em;
+}
+
+/* Eyebrow / small caps label */
+.eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+/* Thin accent tick before labels */
+.tick::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  margin-right: 0.8rem;
+  vertical-align: middle;
+  background: var(--accent);
+}
+
+/* Cinematic photo treatment (dark) */
+.photo-cine {
+  filter: brightness(0.78) contrast(1.06) saturate(0.95);
+}
+.photo-cine-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 11, 0.15) 0%,
+    rgba(10, 10, 11, 0.05) 40%,
+    rgba(10, 10, 11, 0.92) 100%
+  );
+}
+
+/* Dark photo placeholder */
+.photo-slot {
+  background-color: #131316;
+  background-image: radial-gradient(
+    120% 120% at 70% 10%,
+    rgba(232, 35, 47, 0.1),
+    transparent 55%
+  );
+}
+
+/* Subtle grain for depth */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--d, 0ms);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Soft WhatsApp FAB pulse */
+@keyframes wa-pulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 34px -8px rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 10px 34px -4px rgba(37, 211, 102, 0.8);
+  }
+}
+.wa-pulse {
+  animation: wa-pulse 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .scroll-reveal,
+  .wa-pulse,
+  .scroll-bounce,
+  .marquee-left,
+  .marquee-right {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Scroll-indicator bounce */
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+.scroll-bounce {
+  animation: bounce-y 1.6s ease-in-out infinite;
+}
+
+/* Infinite marquee */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee-left  { animation: marquee-left  32s linear infinite; }
+.marquee-right { animation: marquee-right 32s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* CSS Scroll-Driven parallax für Intro-Hintergrund (Chrome 115+, Safari 18+) */
+@supports (animation-timeline: scroll()) {
+  @keyframes intro-parallax {
+    from { transform: translateY(0) scale(1.15); }
+    to   { transform: translateY(12%) scale(1.15); }
+  }
+  .intro-parallax {
+    animation: intro-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100svh;
+  }
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a30;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
