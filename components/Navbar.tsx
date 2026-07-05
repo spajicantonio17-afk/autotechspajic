@@ -12,6 +12,7 @@ const links = [
   { href: "#galerija", label: "Galerija" },
   { href: "#o-nama", label: "O nama" },
   { href: "#kontakt", label: "Di se nalazimo" },
+  { href: "#faq", label: "Česta pitanja" },
 ];
 
 export default function Navbar() {

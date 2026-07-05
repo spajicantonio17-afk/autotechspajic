@@ -1,14 +1,9 @@
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
 import Reveal from "./Reveal";
 import WhatsAppIcon from "./WhatsAppIcon";
+import OpenStatusBadge from "./OpenStatusBadge";
 import { waLink } from "@/lib/whatsapp";
-
-const hours = [
-  { day: "Ponedjeljak – Petak", time: "09:00 – 18:00" },
-  { day: "Pauza", time: "12:00 – 13:00" },
-  { day: "Subota", time: "09:00 – 15:00" },
-  { day: "Nedjelja", time: "Zatvoreno" },
-];
+import { BUSINESS, HOURS_DISPLAY } from "@/lib/business";
 
 export default function Contact() {
   return (
@@ -24,6 +19,9 @@ export default function Contact() {
               Najbrži način da dođete do nas je WhatsApp. Pošaljite poruku s
               opisom vozila — odgovaramo brzo i bez obaveze.
             </p>
+            <div className="mt-5">
+              <OpenStatusBadge />
+            </div>
           </div>
         </Reveal>
 
@@ -35,20 +33,29 @@ export default function Contact() {
                 <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-wa-bright/10 blur-3xl" />
                 <div className="relative flex items-center gap-2.5 text-sm font-semibold text-wa-bright">
                   <span className="inline-block h-2 w-2 rounded-full bg-wa-bright" />
-                  WhatsApp · 063 509 999
+                  WhatsApp · {BUSINESS.phoneDisplay}
                 </div>
                 <p className="relative mt-4 max-w-sm text-base leading-relaxed text-fg-soft">
                   Pošaljite nam poruku — opišite vozilo i što vam treba.
                 </p>
-                <a
-                  href={waLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative mt-6 inline-flex items-center gap-2.5 rounded-full bg-wa-bright px-7 py-4 text-sm font-semibold text-bg transition-all hover:bg-wa"
-                >
-                  <WhatsAppIcon className="h-5 w-5" />
-                  Pošalji poruku
-                </a>
+                <div className="relative mt-6 flex flex-wrap items-center gap-3">
+                  <a
+                    href={waLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 rounded-full bg-wa-bright px-7 py-4 text-sm font-semibold text-bg transition-all hover:bg-wa"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    Pošalji poruku
+                  </a>
+                  <a
+                    href={`tel:${BUSINESS.phone}`}
+                    className="inline-flex items-center gap-2.5 rounded-full border border-line px-7 py-4 text-sm font-semibold text-fg transition-all hover:border-fg"
+                  >
+                    <Phone className="h-4 w-4" strokeWidth={1.8} />
+                    Nazovi
+                  </a>
+                </div>
               </div>
             </Reveal>
 
@@ -60,12 +67,12 @@ export default function Contact() {
                     Lokacija
                   </div>
                   <p className="mt-4 font-display text-lg font-bold leading-snug tracking-tight text-fg">
-                    Pocrte 59
+                    {BUSINESS.street}
                     <br />
-                    88340 Grude
+                    {BUSINESS.postalCode} {BUSINESS.city}
                   </p>
                   <p className="mt-2 text-sm text-fg-faint">
-                    Bosna i Hercegovina
+                    {BUSINESS.countryDisplay}
                   </p>
                 </div>
               </Reveal>
@@ -77,7 +84,7 @@ export default function Contact() {
                     Radno vrijeme
                   </div>
                   <div className="mt-4 space-y-2.5">
-                    {hours.map((h) => (
+                    {HOURS_DISPLAY.map((h) => (
                       <div
                         key={h.day}
                         className="flex items-center justify-between gap-3 border-b border-line pb-2 text-sm last:border-0"

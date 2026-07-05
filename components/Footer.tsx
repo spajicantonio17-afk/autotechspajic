@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { Lock, MapPin } from "lucide-react";
+import { Lock, MapPin, Phone } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { waLink } from "@/lib/whatsapp";
+import { BUSINESS } from "@/lib/business";
 
 const links = [
   { href: "#usluge", label: "Usluge" },
@@ -66,7 +67,19 @@ export default function Footer() {
                   className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-bright"
                   strokeWidth={1.8}
                 />
-                Pocrte 59, 88340 Grude
+                {BUSINESS.street}, {BUSINESS.postalCode} {BUSINESS.city}
+              </li>
+              <li>
+                <a
+                  href={`tel:${BUSINESS.phone}`}
+                  className="flex items-center gap-2.5 transition-colors hover:text-fg"
+                >
+                  <Phone
+                    className="h-4 w-4 flex-shrink-0 text-accent-bright"
+                    strokeWidth={1.8}
+                  />
+                  {BUSINESS.phoneDisplay}
+                </a>
               </li>
             </ul>
             <a
@@ -76,7 +89,7 @@ export default function Footer() {
               className="mt-5 inline-flex items-center gap-2.5 rounded-full border border-line px-5 py-2.5 text-sm font-semibold text-fg transition-all hover:border-fg"
             >
               <WhatsAppIcon className="h-4 w-4 text-wa-bright" />
-              063 509 999
+              {BUSINESS.phoneDisplay}
             </a>
           </div>
         </div>

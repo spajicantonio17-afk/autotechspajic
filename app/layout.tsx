@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Hanken_Grotesk } from "next/font/google";
+import JsonLd from "@/components/JsonLd";
+import { siteUrl } from "@/lib/business";
 import "./globals.css";
 
 const display = Archivo({
@@ -15,6 +17,7 @@ const sans = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title:
     "Autotech Spajic — Auto Dijagnostika, Kodiranje i Elektronika | Grude",
   description:
@@ -28,13 +31,22 @@ export const metadata: Metadata = {
     "Autotech Spajic",
     "Hercegovina",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Autotech Spajic — Dijagnostika, kodiranje i elektronika",
     description:
       "Profesionalna dijagnostika, kodiranje, auto elektrika, ključevi, tuning i servis za sve marke vozila. Grude, Hercegovina.",
     type: "website",
     locale: "hr_HR",
+    url: "/",
+    siteName: "Autotech Spajic",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0b",
 };
 
 export default function RootLayout({
@@ -47,6 +59,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${sans.variable} font-sans antialiased`}
       >
+        <JsonLd />
         {children}
       </body>
     </html>

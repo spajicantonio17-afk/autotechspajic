@@ -26,7 +26,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="proces" className="relative border-y border-line bg-bg-2 py-24 lg:py-32">
+    <section id="proces" className="relative border-y border-line bg-bg-2 py-16 lg:py-20">
       <div className="mx-auto max-w-container px-5 lg:px-8">
         <Reveal>
           <div className="max-w-2xl">
@@ -37,7 +37,7 @@ export default function Process() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
+        <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-6">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -62,7 +62,7 @@ export default function Process() {
         </div>
 
         <Reveal delay={120}>
-          <div className="mt-12 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-display text-2xl font-bold tracking-tight text-fg sm:text-3xl">
               Spremni za prvi korak?
             </p>
