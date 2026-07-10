@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "hQoRHSagGj15QLwXYj9IO7otUW2-uN8fhX6u7IOn37I",
+  },
   openGraph: {
     title: "Autotech Spajic — Dijagnostika, kodiranje i elektronika",
     description:
