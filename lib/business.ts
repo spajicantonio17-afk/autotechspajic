@@ -30,10 +30,10 @@ export const BUSINESS = {
   region: "Hercegovina",
 } as const;
 
-// Približne koordinate za Grude — zamijeniti točnima nakon GBP verifikacije.
+// Točne koordinate iz Google Business profila (autotechspajic).
 export const GEO = {
-  latitude: 43.3711,
-  longitude: 17.4106,
+  latitude: 43.37499,
+  longitude: 17.3934791,
 } as const;
 
 // Popuniti nakon GBP verifikacije (npr. https://g.page/r/.../review).

@@ -104,7 +104,7 @@ export default function Contact() {
             <div className="relative h-full min-h-[260px] overflow-hidden rounded-2xl border border-line sm:min-h-[340px] md:min-h-[420px]">
               <iframe
                 title="Lokacija Autotech Spajic — Grude"
-                src="https://www.google.com/maps?q=Pocrte%2059%2C%2088340%20Grude%2C%20Bosna%20i%20Hercegovina&output=embed"
+                src="https://www.google.com/maps?q=Autotech+Spajic,+Pocrte+59,+88340+Grude&ftid=0x134b233fc2cffdc3:0x4683f64e3eff18d0&output=embed"
                 className="h-full min-h-[260px] w-full sm:min-h-[340px] md:min-h-[420px]"
                 style={{ filter: "invert(0.92) hue-rotate(180deg) grayscale(0.2)" }}
                 loading="lazy"
