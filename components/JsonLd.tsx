@@ -2,6 +2,7 @@ import {
   ALTERNATE_NAMES,
   BUSINESS,
   GEO,
+  GOOGLE_MAPS_URL,
   SAME_AS,
   openingHoursSpecification,
   siteUrl,
@@ -34,6 +35,7 @@ export default function JsonLd() {
       latitude: GEO.latitude,
       longitude: GEO.longitude,
     },
+    hasMap: GOOGLE_MAPS_URL,
     openingHoursSpecification: openingHoursSpecification(),
     areaServed: [
       { "@type": "AdministrativeArea", name: "Hercegovina" },

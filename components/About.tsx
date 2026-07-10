@@ -1,7 +1,6 @@
 import Reveal from "./Reveal";
 import Counter from "./Counter";
 
-// Zahlen sind Platzhalter — echte Werte hier eintragen.
 const stats = [
   { to: 7, suffix: "", label: "Godina iskustva" },
   { to: 1000, suffix: "+", label: "Odrađenih vozila" },

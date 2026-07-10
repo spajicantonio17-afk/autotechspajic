@@ -28,8 +28,9 @@ export default function Footer() {
               />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-fg-soft">
-              Dijagnostika, kodiranje, auto elektrika, ključevi, tuning i servis
-              za sve marke vozila. Grude, Hercegovina.
+              Auto servis i dijagnostika u Grudama — kodiranje, auto elektrika,
+              izrada ključeva i chiptuning za sve marke vozila. Hercegovina,
+              BiH.
             </p>
           </div>
 

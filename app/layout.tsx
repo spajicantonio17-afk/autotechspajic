@@ -18,10 +18,9 @@ const sans = Hanken_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
-  title:
-    "Autotech Spajic — Auto Dijagnostika, Kodiranje i Elektronika | Grude",
+  title: "Autotech Spajic — Dijagnostika, kodiranje i elektrika | Grude",
   description:
-    "Autotech Spajic iz Gruda — profesionalna auto dijagnostika, kodiranje i programiranje upravljačkih jedinica, auto elektrika, izrada ključeva, chiptuning i servis za sve marke vozila.",
+    "Autotech Spajic iz Gruda — auto dijagnostika, kodiranje upravljačkih jedinica, auto elektrika, izrada ključeva, chiptuning i servis za sve marke vozila.",
   keywords: [
     "Autotech Spajic",
     "Autotech Spajic Grude",
@@ -52,6 +51,12 @@ export const metadata: Metadata = {
     locale: "hr_HR",
     url: "/",
     siteName: "Autotech Spajic",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Autotech Spajic — Dijagnostika, kodiranje i elektronika",
+    description:
+      "Profesionalna dijagnostika, kodiranje, auto elektrika, ključevi, tuning i servis za sve marke vozila. Grude, Hercegovina.",
   },
 };
 

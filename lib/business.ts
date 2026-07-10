@@ -1,12 +1,10 @@
 // Central business data — single source of truth for Contact, Footer,
 // JSON-LD structured data and the live open/closed badge.
 //
-// NAKON VERIFIKACIJE GOOGLE BUSINESS PROFILA:
-// 1. Zamijeniti GEO koordinate točnim vrijednostima iz Google Mapsa
-//    (desni klik na pin → koordinate).
-// 2. Upisati GOOGLE_REVIEW_URL (link "Napišite recenziju" iz GBP-a).
-// 3. Dodati GBP/društvene profile u SAME_AS.
-// 4. Radno vrijeme ovdje i na GBP-u držati identičnim.
+// GBP je verificiran. Održavanje:
+// 1. GOOGLE_REVIEW_URL po želji zamijeniti službenim kratkim linkom iz
+//    GBP-a (Zatražite recenzije → g.page/r/…) — trenutni link radi isto.
+// 2. Radno vrijeme ovdje i na GBP-u držati identičnim.
 import { WHATSAPP_NUMBER } from "./whatsapp";
 
 // Alternativni nazivi po kojima ljudi traže radionicu na Googleu — pomaže
@@ -36,8 +34,15 @@ export const GEO = {
   longitude: 17.3934791,
 } as const;
 
-// Popuniti nakon GBP verifikacije (npr. https://g.page/r/.../review).
-export const GOOGLE_REVIEW_URL = "";
+// Google Maps ID (ftid) poslovnog profila — isti kao u Contact map embedu.
+const GOOGLE_MAPS_FTID = "0x134b233fc2cffdc3:0x4683f64e3eff18d0";
+
+// Javni Google Maps profil (CID link) — koristi se za hasMap u JSON-LD-u.
+export const GOOGLE_MAPS_URL =
+  "https://maps.google.com/?cid=5081175620528838864";
+
+// "Napišite recenziju" — otvara Google profil s otvorenim review dijalogom.
+export const GOOGLE_REVIEW_URL = `https://www.google.com/maps/place//data=!4m3!3m2!1s${GOOGLE_MAPS_FTID}!12e1`;
 
 export const INSTAGRAM_URL = "https://www.instagram.com/autotechspajic/";
 

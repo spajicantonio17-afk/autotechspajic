@@ -7,27 +7,35 @@ const frames: {
   src: string;
   src2?: string;
   src3?: string;
+  alt: string;
+  alt2?: string;
+  alt3?: string;
   label: string;
   caption: string;
 }[] = [
   {
     src: "/photos/radionica.jpg",
+    alt: "Radionica Autotech Spajic u Grudama — auto servis i dijagnostika",
     label: "Radionica",
     caption: "Naša moderna radionica",
   },
   {
     src: "/photos/dijagnostika.jpg",
+    alt: "Originalna dijagnostička oprema za auto dijagnostiku — ODIS, Xentry, ISTA, Bosch",
     label: "Dijagnostička oprema",
     caption: "Originalna dijagnostika: ODIS, PSA, Porsche, Xentry, ISTA, Bosch",
   },
   {
     src: "/photos/kljucevi-tuning.jpg",
+    alt: "Izrada auto ključeva i profesionalna oprema za chiptuning — Autotech Spajic Grude",
     label: "Ključevi i chiptuning",
     caption: "Izrada ključeva i profesionalni alati za chiptuning",
   },
   {
     src: "/photos/stol-1.jpg",
     src2: "/photos/stol-2.jpg",
+    alt: "Radni stol za auto elektroniku i programiranje upravljačkih jedinica",
+    alt2: "Popravak i lemljenje auto elektronike u radionici Autotech Spajic",
     label: "Radni prostor",
     caption: "Elektronika i programiranje — do zadnjeg detalja",
   },
@@ -35,6 +43,9 @@ const frames: {
     src: "/photos/detalj-punjac.jpg",
     src2: "/photos/detalj-hauba.jpg",
     src3: "/photos/detalj-beta.jpg",
+    alt: "Punjač akumulatora tijekom dijagnostike vozila",
+    alt2: "Pregled vozila pod haubom u auto servisu u Grudama",
+    alt3: "Profesionalni alat za auto elektriku u radionici",
     label: "Detalji",
     caption: "Detalji koji čine razliku",
   },
@@ -77,7 +88,7 @@ export default function ScrollFilm() {
                     <div className="relative">
                       <Image
                         src={frame.src}
-                        alt={frame.label}
+                        alt={frame.alt}
                         fill
                         className="photo-cine object-contain"
                       />
@@ -86,7 +97,7 @@ export default function ScrollFilm() {
                       <div className="relative">
                         <Image
                           src={frame.src2}
-                          alt={frame.label}
+                          alt={frame.alt2 ?? frame.alt}
                           fill
                           className="photo-cine object-contain"
                         />
@@ -94,7 +105,7 @@ export default function ScrollFilm() {
                       <div className="relative">
                         <Image
                           src={frame.src3}
-                          alt={frame.label}
+                          alt={frame.alt3 ?? frame.alt}
                           fill
                           className="photo-cine object-contain"
                         />
@@ -107,7 +118,7 @@ export default function ScrollFilm() {
                   <div className="relative">
                     <Image
                       src={frame.src}
-                      alt={frame.label}
+                      alt={frame.alt}
                       fill
                       className="photo-cine object-contain sm:object-cover sm:object-center"
                     />
@@ -115,7 +126,7 @@ export default function ScrollFilm() {
                   <div className="relative hidden sm:block">
                     <Image
                       src={frame.src2}
-                      alt={frame.label}
+                      alt={frame.alt2 ?? frame.alt}
                       fill
                       className="photo-cine object-cover object-center"
                     />
@@ -124,7 +135,7 @@ export default function ScrollFilm() {
               ) : frame.src ? (
                 <Image
                   src={frame.src}
-                  alt={frame.label}
+                  alt={frame.alt}
                   fill
                   priority={i === 0}
                   className="photo-cine object-contain sm:object-cover sm:object-center"

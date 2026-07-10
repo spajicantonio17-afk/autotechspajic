@@ -1,9 +1,9 @@
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone, Star } from "lucide-react";
 import Reveal from "./Reveal";
 import WhatsAppIcon from "./WhatsAppIcon";
 import OpenStatusBadge from "./OpenStatusBadge";
 import { waLink } from "@/lib/whatsapp";
-import { BUSINESS, HOURS_DISPLAY } from "@/lib/business";
+import { BUSINESS, GOOGLE_REVIEW_URL, HOURS_DISPLAY } from "@/lib/business";
 
 export default function Contact() {
   return (
@@ -74,6 +74,17 @@ export default function Contact() {
                   <p className="mt-2 text-sm text-fg-faint">
                     {BUSINESS.countryDisplay}
                   </p>
+                  {GOOGLE_REVIEW_URL && (
+                    <a
+                      href={GOOGLE_REVIEW_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent-bright transition-colors hover:text-fg"
+                    >
+                      <Star className="h-4 w-4" strokeWidth={1.8} />
+                      Napišite recenziju na Googleu
+                    </a>
+                  )}
                 </div>
               </Reveal>
 
