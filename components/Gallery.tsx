@@ -47,21 +47,9 @@ const shots: Shot[] = [
     tag: "Elektrika",
   },
   {
-    src: "/photos/bmw-f30-brava-vrata.jpg",
-    title: "BMW 3 (F30)",
-    desc: "Zamjena brave vrata",
-    tag: "Elektrika",
-  },
-  {
     src: "/photos/bmw-f30-podizac-stakla.jpg",
     title: "BMW 3 (F30)",
     desc: "Zamjena podizača stakla",
-    tag: "Elektrika",
-  },
-  {
-    src: "/photos/bmw-f30-poklopac-rezervoara.jpg",
-    title: "BMW 3 (F30)",
-    desc: "Popravak aktuatora poklopca rezervoara",
     tag: "Elektrika",
   },
   {
@@ -172,12 +160,6 @@ const shots: Shot[] = [
     desc: "Mercedes E-klasa, AMG i BMW E30 M3",
     tag: "Radionica",
   },
-  {
-    src: "/photos/bmw-hauba-art.jpg",
-    title: "Detalj iz radionice",
-    desc: "Ručno oslikana BMW hauba",
-    tag: "Radionica",
-  },
 ];
 
 function Tile({ shot, onOpen }: { shot: Shot; onOpen: () => void }) {
@@ -196,12 +178,8 @@ function Tile({ shot, onOpen }: { shot: Shot; onOpen: () => void }) {
           className="photo-cine object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-1 p-4">
-        <span className="text-xs font-medium uppercase tracking-widest text-fg-faint">
-          {shot.tag}
-        </span>
+      <div className="flex flex-col gap-1 p-3">
         <span className="text-sm font-semibold text-fg">{shot.title}</span>
-        <span className="text-sm leading-relaxed text-fg-soft">{shot.desc}</span>
       </div>
     </button>
   );
