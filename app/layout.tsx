@@ -23,12 +23,19 @@ export const metadata: Metadata = {
   description:
     "Autotech Spajic iz Gruda — profesionalna auto dijagnostika, kodiranje i programiranje upravljačkih jedinica, auto elektrika, izrada ključeva, chiptuning i servis za sve marke vozila.",
   keywords: [
+    "Autotech Spajic",
+    "Autotech Spajic Grude",
+    "Auto Spajic",
+    "Spajic auto elektrika",
+    "Spajic dijagnostika",
+    "Spajic Grude",
     "auto dijagnostika Grude",
+    "auto elektrika Grude",
+    "auto servis Grude",
     "kodiranje ECU",
     "auto elektrika",
     "auto ključevi Grude",
     "chiptuning",
-    "Autotech Spajic",
     "Hercegovina",
   ],
   alternates: {

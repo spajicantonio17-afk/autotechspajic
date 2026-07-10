@@ -9,6 +9,14 @@
 // 4. Radno vrijeme ovdje i na GBP-u držati identičnim.
 import { WHATSAPP_NUMBER } from "./whatsapp";
 
+// Alternativni nazivi po kojima ljudi traže radionicu na Googleu — pomaže
+// da pretrage tipa "Auto Spajic" ili "Spajic elektrika" vode direktno na nas.
+export const ALTERNATE_NAMES = [
+  "Auto Spajic",
+  "Spajic auto elektrika",
+  "Autotech Spajic Grude",
+] as const;
+
 export const BUSINESS = {
   name: "Autotech Spajic",
   legalName: "Autotech Spajic",

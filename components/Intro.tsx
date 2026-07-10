@@ -11,6 +11,13 @@ const chips = ["Chiptuning", "Ključevi", "Dijagnostika", "Kodiranje", "Servis",
 export default function Intro() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden grain">
+      {/* Für Google/Screenreader lesbare H1 (visuell versteckt) — Markenname
+          + wichtigste Keywords, damit Namenssuchen direkt hierher führen. */}
+      <h1 className="sr-only">
+        Autotech Spajic — auto dijagnostika, elektrika, kodiranje i ključevi u
+        Grudama
+      </h1>
+
       {/* Background image or dark fallback */}
       <div className="photo-slot absolute inset-0">
         {GARAGE_IMAGE ? (

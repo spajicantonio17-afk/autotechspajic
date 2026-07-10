@@ -1,4 +1,5 @@
 import {
+  ALTERNATE_NAMES,
   BUSINESS,
   GEO,
   SAME_AS,
@@ -15,6 +16,7 @@ export default function JsonLd() {
     "@type": "AutoRepair",
     "@id": `${url}/#business`,
     name: BUSINESS.name,
+    alternateName: [...ALTERNATE_NAMES],
     url,
     image: `${url}/opengraph-image`,
     logo: `${url}/icon.png`,
